@@ -38,9 +38,18 @@ document.getElementById("keszites")?.addEventListener("click", () => {
 
 document.getElementById("export")?.addEventListener("click", () => {
   const csvElement = document.getElementById("csv");
-  csvElement!.textContent = "nev;atk;hp\n";
+  let text = "nev;atk;hp";
   ratList.forEach((rat) => {
     const csv = rat.toCSV();
-    csvElement!.textContent += csv +"\n";
+    text += "\n" + csv;
   });
+  csvElement!.textContent = text;
+  let blobdtMIME =
+        new Blob([text], { type: "text/csv" })
+        let url = URL.createObjectURL(blobdtMIME)
+    let anele = document.createElement("a")
+    anele.setAttribute("download", "CsvLetoltes");
+    anele.href = url;
+    anele.click();
+    console.log(blobdtMIME)
 });

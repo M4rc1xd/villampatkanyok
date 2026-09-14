@@ -45,8 +45,8 @@ document.getElementById("export")?.addEventListener("click", () => {
   });
   csvElement!.textContent = text;
   let blobdtMIME =
-        new Blob([text], { type: "text/csv" })
-        let url = URL.createObjectURL(blobdtMIME)
+    new Blob([text], { type: "text/csv" })
+    let url = URL.createObjectURL(blobdtMIME)
     let anele = document.createElement("a")
     anele.setAttribute("download", "CsvLetoltes");
     anele.href = url;

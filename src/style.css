@@ -28,3 +28,7 @@
     opacity: 1;
   }
 }
+
+#csv{
+  white-space: pre-wrap;
+}

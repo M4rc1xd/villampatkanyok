@@ -8,5 +8,29 @@ document.getElementById("keszites")?.addEventListener("click", () => {
 
   const rat = new ElectricRat(nev, Math.ceil(Math.random() * (20 - 9) + 9), Math.ceil(Math.random() * (100 - 49) + 49));
   ratList.push(rat);
+  const lista = document.getElementById("lista");
+  lista!.innerHTML = "";
+  ratList.forEach((rat) => {
+    const div = document.createElement("div");
+    div.classList.add("kartya");
+
+    const nevDiv = document.createElement("div");
+    nevDiv.classList.add("kartya-nev");
+    nevDiv.textContent = rat.name;
+
+    const atkDiv = document.createElement("div");
+    atkDiv.classList.add("kartya-atk");
+    atkDiv.textContent = rat.atk.toString();
+
+    const hpDiv = document.createElement("div");
+    hpDiv.classList.add("kartya-hp");
+    hpDiv.textContent = rat.hp.toString();
+
+    div.appendChild(nevDiv);
+    div.appendChild(atkDiv);
+    div.appendChild(hpDiv);
+
+    lista?.appendChild(div);
+  });
   }
 );

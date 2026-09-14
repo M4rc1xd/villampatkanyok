@@ -6,8 +6,8 @@ test('errort dob nevhiany miatt', () => {
 });
 
 test('jol mukodik', () => {
-    const rat = new ElectricRat("Sparky", 10, 100);
-    expect(rat.name).toBe("Sparky");
+    const rat = new ElectricRat("Zolika", 10, 100);
+    expect(rat.name).toBe("Zolika");
     expect(rat.atk).toBe(10);
     expect(rat.hp).toBe(100);
 });

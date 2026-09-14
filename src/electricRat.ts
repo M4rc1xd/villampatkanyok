@@ -11,5 +11,8 @@ export class ElectricRat {
         this.atk = atk;
         this.hp = hp;
     }
+    public toCSV(): string {
+        return `${this.name};${this.atk};${this.hp}`;
+    }
 }
 

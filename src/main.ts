@@ -10,6 +10,7 @@ document.getElementById("keszites")?.addEventListener("click", () => {
   ratList.push(rat);
   const lista = document.getElementById("lista");
   lista!.innerHTML = "";
+  document.getElementById("csv")!.textContent = "";
   ratList.forEach((rat) => {
     const div = document.createElement("div");
     div.classList.add("kartya");
@@ -34,3 +35,12 @@ document.getElementById("keszites")?.addEventListener("click", () => {
   });
   }
 );
+
+document.getElementById("export")?.addEventListener("click", () => {
+  const csvElement = document.getElementById("csv");
+  csvElement!.textContent = "nev;atk;hp\n";
+  ratList.forEach((rat) => {
+    const csv = rat.toCSV();
+    csvElement!.textContent += csv +"\n";
+  });
+});

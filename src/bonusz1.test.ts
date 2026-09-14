@@ -11,3 +11,8 @@ test('jol mukodik', () => {
     expect(rat.atk).toBe(10);
     expect(rat.hp).toBe(100);
 });
+
+test('helyesen csv formatumba alakitja az adatokat', () => {
+    const rat = new ElectricRat("Zolika", 10, 100);
+    expect(rat.toCSV()).toBe("Zolika;10;100");
+});

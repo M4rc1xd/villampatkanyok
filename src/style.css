@@ -9,9 +9,22 @@
   align-items: center;
 }
 
+.kartya:last-child {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
 #lista {
   display : flex;
   gap: 10px;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
